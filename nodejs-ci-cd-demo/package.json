@@ -1,24 +1,10 @@
-name: Node.js CI/CD
-
-on:
-  push:
-    branches: [ master ]  # or 'main' if your repo uses that
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
-
-    steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
-
-    - name: Set up Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: 16
-
-    - name: Install dependencies
-      run: npm install
-
-    - name: Run tests
-      run: npm test
+{
+  "name": "nodejs-ci-cd-demo",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "echo \"Running tests...\" && exit 0"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
