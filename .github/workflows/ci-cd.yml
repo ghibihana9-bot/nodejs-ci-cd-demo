@@ -2,7 +2,7 @@ name: Node.js CI/CD
 
 on:
   push:
-    branches: [ master ]  # or 'main' if your repo uses that
+    branches: [ master ]
 
 jobs:
   build:
@@ -19,9 +19,8 @@ jobs:
 
     - name: Install dependencies
       run: npm install
+      working-directory: nodejs-ci-cd-demo
 
     - name: Run tests
       run: npm test
-
-    - name: Deploy (placeholder)
-      run: echo "Deploy step goes here"
+      working-directory: nodejs-ci-cd-demo
