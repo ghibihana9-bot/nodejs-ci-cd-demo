@@ -1,20 +1,27 @@
+name: Node.js CI/CD
+
 on:
-push:
-branches: [ main ] # or 'master' if your repo uses that
+  push:
+    branches: [ master ]  # or 'main' if your repo uses that
 
 jobs:
-build:
-runs-on: ubuntu-latest
+  build:
+    runs-on: ubuntu-latest
 
-steps:
-- uses: actions/checkout@v3
-- uses: actions/setup-node@v3
-with:
-  node-version: 16
-- run: npm install
-- run: npm test
-- name: Run tests
-run: npm test
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
 
-- name: Deploy (placeholder)
-run: echo "Deploy step goes here"
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: 16
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Run tests
+      run: npm test
+
+    - name: Deploy (placeholder)
+      run: echo "Deploy step goes here"
